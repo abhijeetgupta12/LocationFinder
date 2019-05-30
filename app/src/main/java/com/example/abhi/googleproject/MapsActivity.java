@@ -54,11 +54,11 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
             if(locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER))
             {
-                locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, new LocationListener() {
+                locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 10000, 0, new LocationListener() {
                     @Override
                     public void onLocationChanged(Location location) {
 
-                        Toast.makeText(MapsActivity.this,"Network",Toast.LENGTH_SHORT);
+                        Toast.makeText(MapsActivity.this,"Network",Toast.LENGTH_SHORT).show();
 
                         double latitude = location.getLatitude();
                         double longitude = location.getLongitude();
@@ -103,10 +103,10 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
             }
             else if(locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER))
             {
-                locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, new LocationListener() {
+                locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 10000, 0, new LocationListener() {
                     @Override
                     public void onLocationChanged(Location location) {
-                        Toast.makeText(MapsActivity.this,"GPS",Toast.LENGTH_SHORT);
+                        Toast.makeText(MapsActivity.this,"GPS",Toast.LENGTH_SHORT).show();
 
                         double latitude = location.getLatitude();
                         double longitude = location.getLongitude();
